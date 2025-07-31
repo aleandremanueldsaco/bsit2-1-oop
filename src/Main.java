@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Main {
     static String studentId = "";
     static String firstname = "";
@@ -11,7 +10,6 @@ public class Main {
     static int project = 0;
     static int attendance = 0;
     static int averageScore = 0;
-
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
@@ -58,6 +56,7 @@ public class Main {
             System.out.println("Remarks:PASSED");
         } else {
             System.out.println("Remarks:FAILED");
+            System.out.println("wasdawdsdawdsdw");
         }
 
     }
