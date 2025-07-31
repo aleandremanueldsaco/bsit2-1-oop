@@ -56,7 +56,7 @@ public class Main {
             System.out.println("Remarks:PASSED");
         } else {
             System.out.println("Remarks:FAILED");
-            System.out.println("wasdawdsdawdsdw");
+
         }
 
     }
