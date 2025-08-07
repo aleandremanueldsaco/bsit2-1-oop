@@ -1,62 +1,33 @@
-import java.util.Scanner;
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static String studentId = "";
-    static String firstname = "";
-    static String lastname = "";
-    static String course = "";
-    static String section = "";
-    static int midterm = 0;
-    static int finals = 0;
-    static int project = 0;
-    static int attendance = 0;
-    static int averageScore = 0;
-    public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        Student student1 = new Student("Liz Silubrico ", 18, "BSIT", 71.0, 71.0, 71.5);
+        Student student2 = new Student("Jose Manuel Borja", 20, "BSIT", 85.0, 75.8, 85.5);
+        Student student3 = new Student("Ashton Lactuan", 40, "BSIT", 99.9, 92.0, 94.7);
 
-        System.out.print("Student ID: ");
-        studentId = scanner.nextLine();
-        System.out.print("First Name: ");
-        firstname = scanner.nextLine();
-        System.out.print("Last Name: ");
-        lastname = scanner.nextLine();
-        System.out.print("Course: ");
-        course = scanner.nextLine();
-        System.out.print("Section: ");
-        section = scanner.nextLine();
-        System.out.println("Student ID:" + studentId);
-        System.out.println("First Name:" + firstname);
-        System.out.println("Last Name:" + lastname);
-        System.out.println("Course:" + course);
-        System.out.println("Section:" + section);
-
-
-        System.out.println("Enter your score");
-
-        System.out.print("Midterm Exam Score: ");
-        midterm = scanner.nextInt();
-
-        System.out.print("Final Exam Score: ");
-        finals = scanner.nextInt();
-
-        System.out.print("Project Score: ");
-        project = scanner.nextInt();
-
-        System.out.print("Attendance Score: ");
-        attendance = scanner.nextInt();
-
-        System.out.println("STUDENT SCORE");
-        System.out.println("Midterm Exam Score: " + midterm);
-        System.out.println("Final Exam Score:" + finals);
-        System.out.println("Project Score:" + project);
-        System.out.println("Attendance Score:" + attendance);
-        averageScore = midterm + finals + project + attendance / 400;
-
-        System.out.println("Average Score: " + averageScore);
-        if(averageScore >= 75) {
-            System.out.println("Remarks:PASSED");
-        } else {
-            System.out.println("Remarks:FAILED");
-        }
-
+        student1.displayInfo();
+        System.out.println();
+        student2.displayInfo();
+        System.out.println();
+        student3.displayInfo();
+        System.out.println();
+        student1.calculateAverage();
+        System.out.println();
+        student2.calculateAverage();
+        System.out.println();
+        student3.calculateAverage();
+        System.out.println();
+        student1.getLetterGrade();
+        System.out.println();
+        student2.getLetterGrade();
+        System.out.println();
+        student3.getLetterGrade();
+        System.out.println();
+        student1.isPassing();
+        System.out.println();
+        student2.isPassing();
+        System.out.println();
+        student3.isPassing();
+       }
     }
-}
