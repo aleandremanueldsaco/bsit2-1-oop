@@ -21,7 +21,7 @@ public class LibraryManager {
             if (books.isEmpty()) {
                 System.out.println("No books available in the library.");
             } else {
-                System.out.println("Books in the library:");
+                System.out.println("--Current Books--");
                 for (int i = 0; i < books.size(); i++) {
                     System.out.println(i + " - " + books.get(i));
                 }
@@ -29,7 +29,7 @@ public class LibraryManager {
         } catch (IllegalStateException e) {
             System.out.println("Error: " + e.getMessage());
         } finally {
-            System.out.println("Finished executing showBooks().\n");
+            System.out.println("Display operation completed");
         }
     }
 
@@ -45,7 +45,7 @@ public class LibraryManager {
                     throw new IllegalArgumentException("Book title must be at least 3 characters long.");
                 }
                 books.add(title);
-                System.out.println("Book added successfully: " + title);
+                System.out.println( "'" + title + "'" + " added successfully" );
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println("Invalid input: " + e.getMessage());
@@ -70,7 +70,7 @@ public class LibraryManager {
                     throw new IllegalArgumentException("Index cannot be negative.");
                 }
                 String removedBook = books.remove(index);
-                System.out.println("Book removed successfully: " + removedBook);
+                System.out.println( "'" + removedBook+ "'" + " Removed successfully" );
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input: Please enter a valid number.");
