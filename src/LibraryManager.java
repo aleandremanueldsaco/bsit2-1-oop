@@ -50,10 +50,12 @@ public class LibraryManager {
             } catch (IllegalArgumentException e) {
                 System.out.println("Invalid input: " + e.getMessage());
                 System.out.println("Please try again.\n");
+            } finally {
+                System.out.println("Add operation completed.");
+                showBooks();
             }
         }
-        System.out.println("Add operation completed.");
-        showBooks();
+
     }
 
     public void removeBook() {
@@ -81,9 +83,11 @@ public class LibraryManager {
             } catch (IllegalArgumentException e) {
                 System.out.println("Invalid input: " + e.getMessage());
                 System.out.println("Please try again.\n");
+            } finally {
+                System.out.println("Remove operation completed.");
+                showBooks();
             }
         }
-        System.out.println("Remove operation completed.");
-        showBooks();
+
     }
 }
