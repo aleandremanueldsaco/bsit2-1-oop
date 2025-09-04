@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        System.out.println("== Book Record System==");
         System.out.println("Adding books and ratings...");
 
         Book book1 = new Book("Java Programming", "John Smith");
