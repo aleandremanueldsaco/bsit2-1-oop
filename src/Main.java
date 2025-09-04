@@ -1,62 +1,44 @@
-import java.util.Scanner;
 public class Main {
-    static String studentId = "";
-    static String firstname = "";
-    static String lastname = "";
-    static String course = "";
-    static String section = "";
-    static int midterm = 0;
-    static int finals = 0;
-    static int project = 0;
-    static int attendance = 0;
-    static int averageScore = 0;
-    public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        System.out.println("Adding books and ratings...");
 
-        System.out.print("Student ID: ");
-        studentId = scanner.nextLine();
-        System.out.print("First Name: ");
-        firstname = scanner.nextLine();
-        System.out.print("Last Name: ");
-        lastname = scanner.nextLine();
-        System.out.print("Course: ");
-        course = scanner.nextLine();
-        System.out.print("Section: ");
-        section = scanner.nextLine();
-        System.out.println("Student ID:" + studentId);
-        System.out.println("First Name:" + firstname);
-        System.out.println("Last Name:" + lastname);
-        System.out.println("Course:" + course);
-        System.out.println("Section:" + section);
+        Book book1 = new Book("Java Programming", "John Smith");
+        Book book2 = new Book("Data Structures", "Alice Brown");
+        Book book3 = new Book("Web Development", "Bob Wilson");
 
-
-        System.out.println("Enter your score");
-
-        System.out.print("Midterm Exam Score: ");
-        midterm = scanner.nextInt();
-
-        System.out.print("Final Exam Score: ");
-        finals = scanner.nextInt();
-
-        System.out.print("Project Score: ");
-        project = scanner.nextInt();
-
-        System.out.print("Attendance Score: ");
-        attendance = scanner.nextInt();
-
-        System.out.println("STUDENT SCORE");
-        System.out.println("Midterm Exam Score: " + midterm);
-        System.out.println("Final Exam Score:" + finals);
-        System.out.println("Project Score:" + project);
-        System.out.println("Attendance Score:" + attendance);
-        averageScore = midterm + finals + project + attendance / 400;
-
-        System.out.println("Average Score: " + averageScore);
-        if(averageScore >= 75) {
-            System.out.println("Remarks:PASSED");
-        } else {
-            System.out.println("Remarks:FAILED");
+        try {
+            book1.addRating(4);
+            System.out.println("Rating 4 added successfully");
+            book1.addMultipleRatings(5, 4, 3, 5);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
         }
 
+
+        try {
+            book2.addRating(6);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+
+        System.out.println("\nBook Results:");
+        System.out.println(book1.displayBook());
+        System.out.println(book2.displayBook());
+        System.out.println(book3.displayBook());
+
+
+        System.out.println("\nTotal books created: " + Book.getTotalBooks());
+
+
+        Book highestRatedBook = book1;
+        for (Book book : new Book[]{book1, book2, book3}) {
+            if (book.getAverageRating() > highestRatedBook.getAverageRating()) {
+                highestRatedBook = book;
+            }
+        }
+
+        System.out.println("Highest rated book: " + highestRatedBook.getTitle() + " by "
+                + highestRatedBook.getAuthor() + " (" + highestRatedBook.getAverageRating() + ")");
     }
 }
