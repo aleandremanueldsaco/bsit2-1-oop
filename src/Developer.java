@@ -1,10 +1,10 @@
 public class Developer extends Employee {
-    // Additional attributes specific to a Developer
+
     private String programmingLanguage;
     private int projectsCompleted;
 
     public Developer(String name, int employeeId, double baseSalary, String department, String programmingLanguage, int projectsCompleted) {
-        // Call the parent (Employee) constructor using super()
+
         super(name, employeeId, baseSalary, department);
         this.programmingLanguage = programmingLanguage;
         this.projectsCompleted = projectsCompleted;

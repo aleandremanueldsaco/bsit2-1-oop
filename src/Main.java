@@ -1,9 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("--- EMPLOYEE MANAGEMENT SYSTEM ---");
+        System.out.println("=== EMPLOYEE MANAGEMENT SYSTEM ===");
 
         Manager manager = new Manager("Alice Smith", 2001, 80000, "Engineering", 15000, 8);
-
 
         Developer developer = new Developer("Bob Johnson", 2002, 70000, "Engineering", "Java", 5);
 
@@ -12,17 +11,13 @@ public class Main {
 
 
 
-        System.out.println("\n--- Employee Details ---");
+
         manager.displayInfo();
         manager.work();
         System.out.println("Monthly Salary: $" + String.format("%.2f", manager.calculateSalary()));
-
-        System.out.println("\n--- Employee Details ---");
         developer.displayInfo();
         developer.work();
         System.out.println("Monthly Salary: $" + String.format("%.2f", developer.calculateSalary()));
-
-        System.out.println("\n--- Employee Details ---");
         intern.displayInfo();
         intern.work();
         System.out.println("Monthly Salary: $" + String.format("%.2f", intern.calculateSalary()));

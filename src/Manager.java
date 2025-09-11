@@ -3,7 +3,6 @@ public class Manager extends Employee{
     private int teamSize;
 
     public Manager(String name, int employeeId, double baseSalary, String department, double bonus, int teamSize) {
-        // Call the parent (Employee) constructor using super()
         super(name, employeeId, baseSalary, department);
         this.bonus = bonus;
         this.teamSize = teamSize;

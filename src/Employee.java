@@ -13,6 +13,7 @@ public class Employee {
 
     }
     public void displayInfo(){
+        System.out.println("\n--- Employee Details ---");
         System.out.println("Name: " + name);
         System.out.println("Employee ID: " + employeeId);
         System.out.println("Base Salay: " + baseSalary);
