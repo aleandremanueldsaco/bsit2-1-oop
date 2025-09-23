@@ -1,62 +1,47 @@
-import java.util.Scanner;
 public class Main {
-    static String studentId = "";
-    static String firstname = "";
-    static String lastname = "";
-    static String course = "";
-    static String section = "";
-    static int midterm = 0;
-    static int finals = 0;
-    static int project = 0;
-    static int attendance = 0;
-    static int averageScore = 0;
-    public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
 
-        System.out.print("Student ID: ");
-        studentId = scanner.nextLine();
-        System.out.print("First Name: ");
-        firstname = scanner.nextLine();
-        System.out.print("Last Name: ");
-        lastname = scanner.nextLine();
-        System.out.print("Course: ");
-        course = scanner.nextLine();
-        System.out.print("Section: ");
-        section = scanner.nextLine();
-        System.out.println("Student ID:" + studentId);
-        System.out.println("First Name:" + firstname);
-        System.out.println("Last Name:" + lastname);
-        System.out.println("Course:" + course);
-        System.out.println("Section:" + section);
+        Book book1 = new Book("Java Fundamentals", "B001", "Robert Martin");
+        DVD dvd1 = new DVD("OOP Concepts", "D001", "Tech Films");
+        Magazine mag1 = new Magazine("Programming Weekly", "M001", 15);
 
 
-        System.out.println("Enter your score");
+        Student student = new Student("Alice Johnson", "S12345");
+        Teacher teacher = new Teacher("Dr. Smith", "T001");
+        Librarian librarian = new Librarian("Mary Brown", "L001");
 
-        System.out.print("Midterm Exam Score: ");
-        midterm = scanner.nextInt();
 
-        System.out.print("Final Exam Score: ");
-        finals = scanner.nextInt();
+        System.out.println("=== Library Management System Demo ===");
+        System.out.println("Available Media:");
+        displayMediaInfo(book1);
+        displayMediaInfo(dvd1);
+        displayMediaInfo(mag1);
 
-        System.out.print("Project Score: ");
-        project = scanner.nextInt();
 
-        System.out.print("Attendance Score: ");
-        attendance = scanner.nextInt();
+        System.out.println("\n=== Borrowing Test ===");
+        student.borrowMedia(book1);
+        teacher.borrowMedia(dvd1);
+        student.borrowMedia(book1);
 
-        System.out.println("STUDENT SCORE");
-        System.out.println("Midterm Exam Score: " + midterm);
-        System.out.println("Final Exam Score:" + finals);
-        System.out.println("Project Score:" + project);
-        System.out.println("Attendance Score:" + attendance);
-        averageScore = midterm + finals + project + attendance / 400;
 
-        System.out.println("Average Score: " + averageScore);
-        if(averageScore >= 75) {
-            System.out.println("Remarks:PASSED");
-        } else {
-            System.out.println("Remarks:FAILED");
-        }
+        System.out.println("\n=== Returning Test ===");
+        student.returnMedia(book1);
+        librarian.borrowMedia(book1);
 
+
+        System.out.println("\n=== User Information ===");
+        displayUserInfo(student);
+        displayUserInfo(teacher);
+        displayUserInfo(librarian);
+    }
+
+
+    public static void displayMediaInfo(Media media) {
+        media.displayInfo();
+    }
+
+
+    public static void displayUserInfo(LibraryUser user) {
+        System.out.println(user.getUserType() + " - Max borrow limit: " + user.getMaxBorrowLimit() + " items");
     }
 }
