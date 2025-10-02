@@ -1,5 +1,5 @@
 public class DVD extends LibraryItem implements Borrowable {
-    private int duration; // minutes
+    private int duration;
     private String rating;
     private String genre;
 
@@ -56,7 +56,7 @@ public class DVD extends LibraryItem implements Borrowable {
         return daysLate * 1.00;
     }
 
-    // Borrowable implementation
+    
     @Override
     public void borrowItem(String borrowerName) {
         checkOut(borrowerName);
@@ -74,7 +74,7 @@ public class DVD extends LibraryItem implements Borrowable {
 
     @Override
     public int getBorrowingPeriod() {
-        return 5; // days
+        return 5; 
     }
 
     @Override
